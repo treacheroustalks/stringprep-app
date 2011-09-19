@@ -88,8 +88,6 @@ init([]) ->
     Res = port_control(Port, ?SET_CERTIFICATE_FILE_ACCEPT, "./ssl.pem" ++ [0]),
     case Res of
 	<<0>> ->
-	    %ets:new(iconv_table, [set, public, named_table]),
-	    %ets:insert(iconv_table, {port, Port}),
 	    {ok, Port};
 	<<1, Error/binary>> ->
 	    {error, binary_to_list(Error)}
