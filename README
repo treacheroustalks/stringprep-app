@@ -1,5 +1,11 @@
 ejabberd - High-Performance Enterprise Instant Messaging Server 
 
+This is a fork of the rebarized version of ejabberd from
+https://github.com/esl/ejabberd. The aim of the fork is to split
+the two apps ejabberd and stringprep into separate repos to ease
+integration of ejabberd into applications that use them as rebar
+dependencies.
+
 Quickstart guide
 
 
@@ -29,35 +35,3 @@ To compile ejabberd, go to the main directory and execute the command:
   make
     or
   ./rebar compile
-
-
-Ta install ejabberd, run this command with system administrator rights
-(root user):bberd release:
-  make rel
-    or
-  ./rebar generate
-
- These commands will generate a self-contained OTP system image in
- project's rel/ejabberd subdirectory. Contents of that directory look as
- follows:
-  - rel/ejabberd/bin - administration scripts
-  - rel/ejabberd/etc - configuration files
-  - rel/ejabberd/lib - ejabberd binary, header and runtime files
-  - rel/ejabberd/var - spool directory
-  - rel/ejabberd/log - log file directory
-  - rel/ejabberd/releases - release files directory
-
-To install ejabberd just copy the entire rel/ejabberd directory to
-a place you find suitable.
-
-2. Start ejabberd
-
-You can use the ejabberdctl command line administration script to
-start and stop ejabberd. For example:  
-  ejabberd console
-
-Running it without arguments will show you available possibilities.
-
-
-For detailed information please refer to the
-ejabberd Installation and Operation Guide
